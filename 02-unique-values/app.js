@@ -30,10 +30,20 @@ const menu = [
 // new Set - narrow down
 // ['all',...] - turn it back to array
 
+// Ex. 1: basic
+// const categories = menu.map((item) => item.category);
+// console.log(categories);
+
+// Ex. 2: "new Set()" returns unique values in an object (not array)
+// const categories = new Set(menu.map((item) => item.category));
+// console.log(categories);
+
+// Ex. 2.1: converting new Set object into array using spread operator [...x, ...y]
 const categories = ['all', ...new Set(menu.map((item) => item.category))];
+console.log(categories);
+
 const result = document.querySelector('.result');
-result.innerHTML = categories
-  .map((category) => {
-    return `<button>${category}</button>`;
-  })
-  .join('');
+result.innerHTML = categories.map((category) => {
+  return `<button>${category}</button>`
+})
+.join('');
