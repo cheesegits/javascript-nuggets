@@ -42,6 +42,7 @@ const menu = [
 const categories = ['all', ...new Set(menu.map((item) => item.category))];
 console.log(categories);
 
+// Posting Ex. 2.1 to HTML
 const result = document.querySelector('.result');
 result.innerHTML = categories.map((category) => {
   return `<button>${category}</button>`
