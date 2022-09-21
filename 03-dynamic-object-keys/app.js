@@ -1,13 +1,33 @@
-const person = ['hello', 'great'];
+// Changing the object keys dynamically using square bracket notation
 
-const testPerson = person.map(function (item) {
-  console.log(item);
-});
+let appState = 'loading';
+let keyName = 'computer';
 
-const newPerson = person.map(function (item) {
-  if (item === 'hello') {
-    return item.toUpperCase();
-  }
-  return item;
-});
-console.log(newPerson);
+appState = 'error';
+
+const app = {
+  [appState]:true
+}
+
+app[keyName] = 'apple';
+
+console.log(app);
+
+const state = {
+  loading: true,
+  name: '',
+  job: ''
+}
+
+let updateState = (key, value) => {
+  state[key] = value
+}
+
+updateState('name', 'john');
+updateState('job', 'developer');
+updateState('loading', false);
+
+updateState('products', [])
+updateState('name', 'peter');
+
+console.log(state);
