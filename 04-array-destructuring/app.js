@@ -9,21 +9,20 @@ const fruit3 = fruits[2];
 
 console.log(fruit1, fruit2, fruit3);
 
-const [john, peter, bob, anna, kelly, susan] = friends;
+// const [john, peter, bob, anna, kelly, susan] = friends 
+// console.log(john, peter, bob, anna, kelly, susan); // susan is undefined
 
-console.log(john, peter, bob);
-console.log(john, peter, bob, anna, kelly);
-console.log(john, peter, bob, anna, kelly, susan);
-console.log(john, peter, bob, anna, kelly, susan);
-// Swap Variables
+const [john, , bob, , kelly] = friends; // "," skips peter and anna
+console.log(john, bob, kelly);
 
 let first = 'bob';
 let second = 'john';
 
+// // long way of switching values
 // let temp = second;
 // second = first;
 // first = temp;
 
-[second, first] = [first, second];
-
-console.log(first, second);
+// short way of switching values via destructuring
+[second, first] = [first, second]
+console.log(first, second)
