@@ -4,6 +4,8 @@
 // 1st parameter ('acc') - total of all calculations
 // 2nd parameter ('curr') - current iteration/value
 
+// most powerful array method, capable of replacing filter and find, but more complicated
+
 const staff = [
   { name: 'bob', age: 20, position: 'developer', salary: 100 },
   { name: 'peter', age: 25, position: 'designer', salary: 300 },
@@ -12,12 +14,10 @@ const staff = [
 ];
 
 const dailyTotal = staff.reduce((total, person) => {
-  // console.log(total);
+  console.log(total);
   // console.log(person.salary);
-  console.log(`Total ${total}`);
-  console.log(`Current ${person.salary}`);
   total += person.salary;
-  return total;
-}, 0);
+  return total // always, always return a total, otherwise undefined
+}, 0) // 0 is the initial value
 
 console.log(dailyTotal);
