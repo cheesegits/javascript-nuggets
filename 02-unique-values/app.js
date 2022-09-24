@@ -25,26 +25,25 @@ const menu = [
     category: 'dinner',
   },
 ];
-// const categories = ['all', ...new Set(menu.map((item) => item.category))];
-// map - get all instances
-// new Set - narrow down
-// ['all',...] - turn it back to array
+// map - get all instances - array
+// new Set - narrow down to only 1 of each value - object
+// [... new Set] - spread operator turns "new Set" object into array
 
-// Ex. 1: basic
-// const categories = menu.map((item) => item.category);
-// console.log(categories);
+// Ex. 1: basic map
+const categories1 = menu.map((item) => item.category);
+console.log('categories1', categories1);
 
 // Ex. 2: "new Set()" returns unique values in an object (not array)
-// const categories = new Set(menu.map((item) => item.category));
-// console.log(categories);
+const categories2 = new Set(menu.map((item) => item.category));
+console.log('categories2', categories2);
 
 // Ex. 2.1: converting new Set object into array using spread operator [...x, ...y]
-const categories = ['all', ...new Set(menu.map((item) => item.category))];
-console.log(categories);
+const categories3 = ['all', ...new Set(menu.map((item) => item.category))];
+console.log('categories3', categories3);
 
 // Posting Ex. 2.1 to HTML
 const result = document.querySelector('.result');
-result.innerHTML = categories.map((category) => {
+result.innerHTML = categories3.map((category) => {
   return `<button>${category}</button>`
 })
 .join('');
