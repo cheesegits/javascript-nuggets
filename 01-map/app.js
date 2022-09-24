@@ -35,7 +35,7 @@ const getAges = (person) => person.age;
 const ages2 = people.map(getAges);
 console.log(ages2)
 
-// Ex. 3: returning an object
+// Ex. 3: returning an object with values manipulated
 const newPeople = people.map((person) => {
 return {
   firstName: person.name.toUpperCase(),
